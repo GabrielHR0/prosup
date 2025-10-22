@@ -1,5 +1,17 @@
 package com.example.enums;
 
 public enum Equipamento {
+    BARRA("barra"),
+    HALTER("halter");
 
+    public final String toString;
+
+    Equipamento(String toString) {
+        this.toString = toString;
+    }
+
+    @Override
+    public String toString() {
+        return toString;
+    }
 }

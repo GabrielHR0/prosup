@@ -1,0 +1,157 @@
+{
+"supino": {
+    "barra": {
+        "masculino":{
+            "niveis": [
+                {
+                    "classificacao": "Altamente Avançado",
+                    "nivel": 4,
+                    "min": 120.0
+                },
+                {
+                    "classificacao": "Avançado",
+                    "nivel": 3,
+                    "min": 100.0
+                },
+                {
+                    "classificacao": "Intermediário",
+                    "nível": 2,
+                    "min": 60.0
+                },
+                {
+                    "classificacao": "Iniciante",
+                    "nível": 1,
+                    "min": 0
+                }
+            ]
+        },
+        "feminino": {
+            "niveis": [
+                {
+                    "classificacao": "Altamente Avançado",
+                    "nivel": 4,
+                    "min": 120.0
+                },
+                {
+                    "classificacao": "Avançado",
+                    "nivel": 3,
+                    "min": 100.0
+                },
+                {
+                    "classificacao": "Intermediário",
+                    "nível": 2,
+                    "min": 60.0
+                },
+                {
+                    "classificacao": "Iniciante",
+                    "nível": 1,
+                    "min": 0
+                }
+            ]
+        }
+    }
+},
+"levantamento_terra": {
+    "barra": {
+        "niveis": [
+            {
+                "classificacao": "Altamente Avançado",
+                "nivel": 4,
+                "min": 180.0
+            },
+            {
+                "classificacao": "Avançado",
+                "nivel": 3,
+                "min": 150.0
+            },
+            {
+                "classificacao": "Intermediário",
+                "nível": 2,
+                "min": 100.0
+            },
+            {
+                "classificacao": "Iniciante",
+                "nível": 1,
+                "min": 0
+            }
+        ]
+    }
+},
+"agachamento": {
+    "barra": {
+        "niveis": [
+            {
+                "classificacao": "Altamente Avançado",
+                "nivel": 4,
+                "min": 150.0
+            },
+            {
+                "classificacao": "Avançado",
+                "nivel": 3,
+                "min": 120.0
+            },
+            {
+                "classificacao": "Intermediário",
+                "nível": 2,
+                "min": 80.0
+            },
+            {
+                "classificacao": "Iniciante",
+                "nível": 1,
+                "min": 0
+            }
+        ]
+    }
+},
+
+"puxada": {
+    "barra_fixa": {
+        "niveis": [
+            {
+                "classificacao": "Altamente Avançado",
+                "nivel": 4,
+                "min": 150.0
+            },
+            {
+                "classificacao": "Avançado",
+                "nivel": 3,
+                "min": 1
+            },
+            {
+                "classificacao": "Intermediário",
+                "nível": 2,
+                "min": 0.5
+            },
+            {
+                "classificacao": "Iniciante",
+                "nível": 1,
+                "min": 0
+            }
+        ]
+    },
+    "polia": {
+        "niveis": [
+            {
+                "classificacao": "Altamente Avançado",
+                "nivel": 4,
+                "min": 130.0
+            },
+            {
+                "classificacao": "Avançado",
+                "nivel": 3,
+                "min": 115.0
+            },
+            {
+                "classificacao": "Intermediário",
+                "nível": 2,
+                "min": 100.0
+            },
+            {
+                "classificacao": "Iniciante",
+                "nível": 1,
+                "min": 0
+            }
+        ]
+    }
+}
+}

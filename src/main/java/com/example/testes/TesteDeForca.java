@@ -19,4 +19,12 @@ public class TesteDeForca extends Teste {
     public void setEntrada(Double entrada) {
         this.entrada = entrada;
     }
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
 }

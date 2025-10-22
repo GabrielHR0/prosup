@@ -2,10 +2,10 @@ package com.example.estrategias;
 
 import java.util.List;
 
+import com.example.Biometria;
 import com.example.Contexto;
-import com.example.testes.Teste;
 
-public interface AvaliacaoEstrategia {
+public interface AvaliacaoEstrategia<T> {
     
-    Contexto avaliar(List<Teste> testes, Contexto contexto);
+    Contexto avaliar(List<T> testes, Biometria biometria);
 }
