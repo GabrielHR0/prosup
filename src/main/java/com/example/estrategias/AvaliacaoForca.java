@@ -17,6 +17,9 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
     
     @Override
     public Contexto avaliar(List<TesteDeForca> testes, Biometria biometria){
+
+        Contexto resposta = new Contexto();
+
         for (TesteDeForca teste : testes) {
             Double entrada = teste.getEntrada();
             Unidade unidade  = teste.getUnidade();
@@ -24,7 +27,7 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
             Double massaCorporal = biometria.getMassa();
             Genero genero = biometria.getGenero();
 
-            Double resultado;
+            Double resultado = 0.0;
 
             if (unidade == Unidade.KG) {
                 resultado = (
@@ -34,10 +37,17 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
                 resultado = entrada;
             }
 
-
-
+            Contexto classificacaoTeste = this.classificar(resultado, biometria, teste);
+            Double nivelTeste = (Double) classificacaoTeste.get("nivel");
+            resposta.put(teste.getNome(), nivelTeste);
         }
-        return contexto;
+
+        final Double[] soma = {0.0};
+        resposta.getMap().forEach((chave, valor) -> soma[0] += (Double) valor);
+
+        Double media = soma[0] / resposta.getMap().size();
+        resposta.put("resultado", media);
+        return resposta;
     }
 
     public Contexto classificar(Double resultado, Biometria biometria, TesteDeForca teste){
@@ -55,10 +65,9 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
 
                 for (JsonNode nivel : niveis){
                     if (resultado >= nivel.get("min").asDouble()){
-                        int nivelNumero = nivel.get("nivel").asInt();
+                        Double nivelNumero = nivel.get("nivel").asDouble();
                         String classificacao = nivel.get("classificacao").asText();
                         resposta.put("nivel", nivelNumero);
-
                     }
                 }
                 return resposta;

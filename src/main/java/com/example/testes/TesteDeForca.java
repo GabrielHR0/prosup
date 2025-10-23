@@ -8,8 +8,9 @@ public class TesteDeForca extends Teste {
     protected Double entrada;
     protected Equipamento equipamento;
 
-    public TesteDeForca(String nome, Unidade unidade) {
+    public TesteDeForca(String nome, Unidade unidade, Equipamento equipamento) {
         super(nome, unidade);
+        this.equipamento = equipamento;
     }
 
     public Double getEntrada() {

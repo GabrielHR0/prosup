@@ -2,7 +2,9 @@ package com.example.enums;
 
 public enum Equipamento {
     BARRA("barra"),
-    HALTER("halter");
+    HALTER("halter"),
+    BARRA_FIXA("barra_fixa"),
+    POLIA("polia");
 
     public final String toString;
 

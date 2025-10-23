@@ -4,30 +4,30 @@ package com.example.avaliadores;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.Component;
+import com.example.Biometria;
 import com.example.Contexto;
 import com.example.estrategias.AvaliacaoEstrategia;
+import com.example.testes.Teste;
 
-public class Avaliador implements Component {
+public class Avaliador {
 
     private AvaliacaoEstrategia estrategia;
-    private final List<Component> children = new ArrayList<>();
+    private final List<Teste> testes = new ArrayList<>();
     
     public Avaliador(AvaliacaoEstrategia estrategia){
         this.estrategia = estrategia;
     }
 
-    @Override
-    public Contexto avaliar(Contexto contexto){
-        return estrategia.avaliar(this.children, contexto);
+    public Contexto avaliar(Biometria biometria){
+        return estrategia.avaliar(this.testes, biometria);
     }
     
-    public void add(Component child){
-        this.children.add(child);
+    public void add(Teste child){
+        this.testes.add(child);
     }
 
-    public void remove(Component child){
-        this.children.remove(child);
+    public void remove(Teste child){
+        this.testes.remove(child);
     }
 
     public AvaliacaoEstrategia getEstrategia() {
