@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.Biometria;
-import com.example.Contexto;
 import com.example.estrategias.AvaliacaoEstrategia;
 import com.example.testes.Teste;
 
@@ -18,7 +17,7 @@ public class Avaliador {
         this.estrategia = estrategia;
     }
 
-    public Contexto avaliar(Biometria biometria){
+    public Object avaliar(Biometria biometria){
         return estrategia.avaliar(this.testes, biometria);
     }
     

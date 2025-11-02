@@ -2,14 +2,15 @@ package com.example.testes;
 
 import com.example.enums.Equipamento;
 import com.example.enums.Unidade;
+import com.example.tabelas_classificacao.Composite;
 
-public class TesteDeForca extends Teste {
+public abstract class TesteDeForca extends Teste {
 
     protected Double entrada;
     protected Equipamento equipamento;
 
-    public TesteDeForca(String nome, Unidade unidade, Equipamento equipamento) {
-        super(nome, unidade);
+    public TesteDeForca(String nome, Unidade unidade, Equipamento equipamento, Composite tabelaClassificacao) {
+        super(nome, unidade, tabelaClassificacao);
         this.equipamento = equipamento;
     }
 

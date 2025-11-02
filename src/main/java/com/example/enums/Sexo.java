@@ -1,12 +1,12 @@
 package com.example.enums;
 
-public enum Genero {
+public enum Sexo {
     MASCULINO("masculino"),
     FEMININO("feminino");
 
     public final String toString;
     
-    Genero(String toString) {
+    Sexo(String toString) {
         this.toString = toString;
     }
 
