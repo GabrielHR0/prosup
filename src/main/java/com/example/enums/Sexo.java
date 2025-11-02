@@ -1,14 +1,12 @@
 package com.example.enums;
 
-public enum Equipamento {
-    BARRA("barra"),
-    HALTER("halter"),
-    BARRA_FIXA("barra_fixa"),
-    POLIA("polia");
+public enum Sexo {
+    MASCULINO("masculino"),
+    FEMININO("feminino");
 
     public final String toString;
-
-    Equipamento(String toString) {
+    
+    Sexo(String toString) {
         this.toString = toString;
     }
 

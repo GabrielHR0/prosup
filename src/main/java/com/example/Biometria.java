@@ -1,19 +1,19 @@
 package com.example;
 
-import com.example.enums.Genero;
+import com.example.enums.Sexo;
 
 public class Biometria {
     
     private Integer idade;
     private Double altura;
     private Double massa;
-    private Genero genero;
+    private Sexo sexo;
 
-    public Biometria(Integer idade, Double altura, Double massa, Genero genero) {
+    public Biometria(Integer idade, Double altura, Double massa, Sexo sexo ) {
         this.idade = idade;
         this.altura = altura;
         this.massa = massa;
-        this.genero = genero;
+        this.sexo = sexo;
     }
 
     public Biometria() {
@@ -43,12 +43,12 @@ public class Biometria {
         this.massa = massa;
     }
 
-    public Genero getGenero() {
-        return genero;
+    public Sexo getSexo() {
+        return sexo;
     }
 
-    public void setGenero(Genero genero) {
-        this.genero = genero;
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
     }
 
 

@@ -14,5 +14,9 @@ public class Contexto {
     public Object get(String chave){
         return dados.get(chave);
     }
+
+    public Map<String, Object> getMap(){
+        return this.dados;
+    }
     
 }

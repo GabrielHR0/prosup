@@ -1,0 +1,32 @@
+package com.example.testes;
+
+import com.example.enums.Equipamento;
+import com.example.enums.Unidade;
+import com.example.tabelas_classificacao.Composite;
+
+public abstract class TesteDeForca extends Teste {
+
+    protected Double entrada;
+    protected Equipamento equipamento;
+
+    public TesteDeForca(String nome, Unidade unidade, Equipamento equipamento, Composite tabelaClassificacao) {
+        super(nome, unidade, tabelaClassificacao);
+        this.equipamento = equipamento;
+    }
+
+    public Double getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(Double entrada) {
+        this.entrada = entrada;
+    }
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
+}
