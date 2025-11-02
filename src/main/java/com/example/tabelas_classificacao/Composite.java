@@ -23,6 +23,7 @@ public abstract class Composite implements Component {
         for (Component child : children) {
             Leaf classificacao = child.classificar(resultado, teste, biometria);
             if (classificacao != null) {
+                System.out.println("Classificacao encontrada aqui: " + classificacao);
                 return classificacao;
             }
         }

@@ -1,5 +1,6 @@
 package com.example.estrategias;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.Biometria;
@@ -14,6 +15,8 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
     
     @Override
     public Object avaliar(List<TesteDeForca> testes, Biometria biometria){
+
+        List<Leaf> niveis = new ArrayList<>(); 
 
         for (TesteDeForca teste : testes) {
             Double entrada = teste.getEntrada();
@@ -32,10 +35,19 @@ public class AvaliacaoForca implements AvaliacaoEstrategia<TesteDeForca>{
                 resultado = entrada;
             }
 
+            System.out.println(
+                "teste: "+ teste.getNome()+ "\n"+
+                "entrada: "+ teste.getEntrada() +"\n"+
+                "resultado: "+ resultado
+            );
+
             Leaf classificacao = teste.classificar(resultado, ClassificacaoSexo.class, teste, biometria);
-            
+            niveis.add(classificacao);
+            System.out.println(classificacao.toString());
 
         }
+
+        
         return null;
     }
 
