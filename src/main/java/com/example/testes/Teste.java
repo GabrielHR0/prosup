@@ -17,9 +17,9 @@ public abstract class Teste {
         this.tabelaClassificacao = tabelaClassificacao;
     }
     
-    public Leaf classificar(Double resultado, Class<? extends Component> tipoAlvo, Teste teste, Biometria biometria) {
+    public Leaf classificar(Double resultado, Class<? extends Component> tipoAlvo, Biometria biometria) {
         if (tabelaClassificacao != null) {
-            return tabelaClassificacao.classificar(resultado, tipoAlvo, teste, biometria);
+            return tabelaClassificacao.classificar(resultado, tipoAlvo, this, biometria);
         }
         return null;
     }

@@ -21,6 +21,8 @@ public class Main {
         Avaliador avaliacao1 = new Avaliador(new AvaliacaoForca());
 
         // ---------------- SUPINO ----------------
+
+        //Barra
         TabelaClassificacao tabelaClassificacaoSupino = new TabelaClassificacao();
         ClassificacaoEquipamento barraSupino = new ClassificacaoEquipamento(Equipamento.BARRA);
         tabelaClassificacaoSupino.add(barraSupino);
@@ -39,6 +41,25 @@ public class Main {
         supinoFem.add(new Nivel("Intermediário", 2.0, 40.0, 70.0));
         supinoFem.add(new Nivel("Avançado", 3.0, 70.0, 90.0));
         supinoFem.add(new Nivel("Altamente Avançado", 4.0, 90.0, null));
+
+        //Halter
+        ClassificacaoEquipamento halterSupino = new ClassificacaoEquipamento(Equipamento.HALTER);
+        tabelaClassificacaoSupino.add(halterSupino);
+
+        ClassificacaoSexo supinoHalterMasc = new ClassificacaoSexo(Sexo.MASCULINO);
+        ClassificacaoSexo supinoHalterFem = new ClassificacaoSexo(Sexo.FEMININO);
+        halterSupino.add(supinoHalterMasc);
+        halterSupino.add(supinoHalterFem);
+
+        supinoHalterMasc.add(new Nivel("Iniciante", 1.0, 0.0, 80.0));
+        supinoHalterMasc.add(new Nivel("Intermediário", 2.0, 60.0, 110.0));
+        supinoHalterMasc.add(new Nivel("Avançado", 3.0, 100.0, 130.0));
+        supinoHalterMasc.add(new Nivel("Altamente Avançado", 4.0, 150.0, null));
+
+        supinoHalterFem.add(new Nivel("Iniciante", 1.0, 0.0, 40.0));
+        supinoHalterFem.add(new Nivel("Intermediário", 2.0, 40.0, 70.0));
+        supinoHalterFem.add(new Nivel("Avançado", 3.0, 70.0, 90.0));
+        supinoHalterFem.add(new Nivel("Altamente Avançado", 4.0, 90.0, null));
 
         TesteDeForca testeSupino = new TesteForcaSupino("supino", Unidade.KG, Equipamento.BARRA, tabelaClassificacaoSupino);
 
@@ -120,12 +141,14 @@ public class Main {
         // ---------------- ADICIONA TESTES ----------------
         avaliacao1.add(testeSupino);
         avaliacao1.add(testeTerra);
-        //avaliacao1.add(testeAgachamento);
-        //avaliacao1.add(testePuxada);
+        avaliacao1.add(testeAgachamento);
+        avaliacao1.add(testePuxada);
 
         // ---------------- AVALIAÇÃO FINAL ----------------
         Object resultado = avaliacao1.avaliar(biometriaAluno1);
 
-        System.out.println("Resultado da Avaliação: " + resultado);
+        System.out.println("Resultado da Avaliação de forca: " + resultado);
+
+
     }
 }

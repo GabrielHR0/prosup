@@ -3,6 +3,7 @@ package com.example.tabelas_classificacao;
 import com.example.Biometria;
 import com.example.enums.Equipamento;
 import com.example.testes.Teste;
+import com.example.testes.TesteDeForca;
 
 public class ClassificacaoEquipamento extends Composite {
     private Equipamento equipamento;
@@ -14,17 +15,15 @@ public class ClassificacaoEquipamento extends Composite {
     @Override
     public Leaf classificar(Double resultado, Class<? extends Component> tipoAlvo, Teste teste, Biometria biometria) {
         System.out.println("🔍 [DEBUG] Iniciando classificação em ClassificacaoEquipamento: " + equipamento);
-        System.out.println("🔹 Resultado recebido: " + resultado);
-        System.out.println("🔹 Tipo alvo: " + tipoAlvo.getSimpleName());
-        System.out.println("🔹 Total de filhos: " + children.size());
+        TesteDeForca tForca = (TesteDeForca) teste;
+        if(this.equipamento != tForca.getEquipamento()){
+            return null;
+        }
 
         for (Component child : children) {
             if (child == null) {
-                System.out.println("⚠️  [DEBUG] Child nulo — ignorando...");
                 continue;
             }
-
-            System.out.println("➡️  [DEBUG] Verificando child: " + child.getClass().getSimpleName());
 
             if (tipoAlvo.isInstance(child)) {
                 System.out.println("✅ [DEBUG] Child é instância de " + tipoAlvo.getSimpleName());
@@ -33,8 +32,6 @@ public class ClassificacaoEquipamento extends Composite {
                 if (classificacao != null) {
                     System.out.println("🏁 [DEBUG] Classificação encontrada: " + classificacao);
                     return classificacao;
-                } else {
-                    System.out.println("❌ [DEBUG] Nenhuma classificação retornada por " + child.getClass().getSimpleName());
                 }
 
             } else if (child instanceof Composite) {
@@ -42,10 +39,7 @@ public class ClassificacaoEquipamento extends Composite {
                 Leaf classificacao = child.classificar(resultado, tipoAlvo, teste, biometria);
 
                 if (classificacao != null) {
-                    System.out.println("🏁 [DEBUG] Classificação encontrada dentro do Composite: " + classificacao);
                     return classificacao;
-                } else {
-                    System.out.println("❌ [DEBUG] Retorno nulo dentro do Composite.");
                 }
 
             } else {

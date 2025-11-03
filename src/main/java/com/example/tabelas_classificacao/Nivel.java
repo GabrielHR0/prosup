@@ -8,7 +8,11 @@ public class Nivel extends Leaf{
     private String classificacao;
     private Double pontuacao;
     private Double min;
-    private Double max;
+    private Double max = null;
+
+    public Nivel(Double pontuacao){
+        this.pontuacao = pontuacao;
+    }
 
     public Nivel(String classificacao, Double pontuacao, Double min, Double max) {
         this.classificacao = classificacao;
@@ -35,16 +39,10 @@ public class Nivel extends Leaf{
 
     @Override
     public Leaf classificar(Double resultado, Class<? extends Component> tipoAlvo, Teste teste, Biometria biometria) {
-        System.out.println("   ⚖️ [DEBUG] Verificando nível: " + this);
-        System.out.println("      ➤ Min: " + this.min + " | Max: " + this.max + " | Resultado: " + resultado);
-
         boolean dentroFaixa = resultado >= this.min && (this.max == null || resultado < this.max);
 
         if (dentroFaixa) {
-            System.out.println("✅ Resultado dentro da faixa! Classificação: " + this);
             return this;
-        } else {
-            System.out.println("❌ Fora da faixa.");
         }
         return null;
     }
