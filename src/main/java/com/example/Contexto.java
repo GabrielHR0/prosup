@@ -18,5 +18,4 @@ public class Contexto {
     public Map<String, Object> getMap(){
         return this.dados;
     }
-    
 }

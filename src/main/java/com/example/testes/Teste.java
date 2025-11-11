@@ -47,5 +47,4 @@ public abstract class Teste {
     public void setUnidade(Unidade unidade) {
         this.unidade = unidade;
     }
-
 }
